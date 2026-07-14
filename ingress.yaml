@@ -2,16 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: eks-lab-ingress
+  namespace: 2048-game   # ✅ Added namespace
   annotations:
     kubernetes.io/ingress.class: alb
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: eks-lab-service
-            port:
-              number: 8080
+    - host: eks-lab.example.com   # Replace with your domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eks-lab-service
+                port:
+                  number: 8080
