@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-app
+  name: eks-lab-project
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: devops-app
+      app: eks-lab-project
   template:
     metadata:
       labels:
-        app: devops-app
+        app: eks-lab-project
     spec:
       containers:
-      - name: devops-app
-        image: 085876626280.dkr.ecr.ap-south-1.amazonaws.com/devops-app:latest
+      - name: eks-lab-project
+        image: 085876626280.dkr.ecr.ap-south-1.amazonaws.com/eks-lab-project:latest
         ports:
         - containerPort: 8080
         readinessProbe:

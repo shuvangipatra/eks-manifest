@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: devops-ingress
+  name: eks-lab-ingress
   annotations:
     kubernetes.io/ingress.class: alb
 spec:
@@ -12,6 +12,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: devops-service
+            name: eks-lab-service
             port:
               number: 8080
