@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-path: /health
 spec:
   rules:
-    - host: eks-lab.example.com   # Replace with your domain
+    - host: eks-lab.example.soumitripathy.site
       http:
         paths:
           - path: /
