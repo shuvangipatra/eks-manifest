@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: eks-lab-project
-        image: 085876626280.dkr.ecr.ap-south-1.amazonaws.com/eks-lab-project:20
+        image: 085876626280.dkr.ecr.ap-south-1.amazonaws.com/eks-lab-project:21
         ports:
         - containerPort: 8080
         readinessProbe:
