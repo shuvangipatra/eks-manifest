@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-lab-deployment
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eks-lab-app
+  template:
+    metadata:
+      labels:
+        app: eks-lab-app
+    spec:
+      containers:
+      - name: eks-lab-app
+        image: 085876626280.dkr.ecr.ap-south-1.amazonaws.com/eks-lab-project:latest
+        ports:
+        - containerPort: 8080
